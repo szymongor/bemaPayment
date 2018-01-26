@@ -3,3 +3,5 @@ __pycache__
 bemavenv
 db.sqlite3
 .DS_Store
+.idea
+epaymentapp/migrations/
