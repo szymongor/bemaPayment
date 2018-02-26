@@ -22,4 +22,6 @@ class PostsList(APIView):
             text = request_post['text']
         )
         new_post.save();
-        return Response(request_post)
+        posts = Post.objects.all()
+        serializer = PostSerializer(posts, many=True)
+        return Response(serializer.data)
