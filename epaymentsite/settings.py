@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'epaymentapp',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'epaymentsite.urls'
@@ -169,3 +172,11 @@ JWT_AUTH = {
     'JWT_AUTH_COOKIE': None,
 
 }
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+# CORS_ORIGIN_WHITELIST = (
+#     'localhost:3000',
+#     'localhost:8000',
+#     '127.0.0.1:8000'
+# )
