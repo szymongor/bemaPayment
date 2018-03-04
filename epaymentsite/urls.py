@@ -25,4 +25,5 @@ urlpatterns = [
     path('api-token-verify/', verify_jwt_token),
     path('admin/', admin.site.urls),
     path('posts/', views.PostsList.as_view()),
+    path('bills/', views.BillView.as_view()),
 ]
