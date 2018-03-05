@@ -35,7 +35,7 @@ class Bill(models.Model):
 
     title =  models.CharField(max_length=30, unique=True)
     type = models.CharField(max_length=20, choices=type_choices)
-    amount = models.PositiveIntegerField()
+    amount = models.PositiveIntegerField(default=0)
     founder = models.ForeignKey('SiteUser', on_delete=models.CASCADE,
     related_name='fouded_bills')
     obligors = models.ManyToManyField('SiteUser', related_name='bills_to_pay')
