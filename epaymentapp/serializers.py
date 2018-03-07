@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from epaymentapp.models import Post, Bill
+from epaymentapp.models import Post, Bill, Payment, subPost
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -11,8 +11,20 @@ class PostSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class BillSerializer(serializers.ModelSerializer):
-    Creator = serializers.StringRelatedField(many=False)
 
     class Meta:
         model = Bill
         fields = ('title', 'type', 'creator', 'founder','obligors','payments','status')
+
+class PaymentSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Payment
+        fields = '_all_'
+
+class subPostSerializer(serializers.ModelSerializer):
+    author = serializers.StringRelatedField(many=False)
+
+    class Meta:
+        model = subPost
+        fields = '_all_'
