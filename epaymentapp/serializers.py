@@ -2,9 +2,16 @@ from rest_framework import serializers
 
 from epaymentapp.models import Post, Bill, Payment, subPost
 
+class subPostSerializer(serializers.ModelSerializer):
+    author = serializers.StringRelatedField(many=False)
+
+    class Meta:
+        model = subPost
+        fields = '_all_'
 
 class PostSerializer(serializers.ModelSerializer):
     author = serializers.StringRelatedField(many=False)
+    subposts = subPostSerializer(many=True)
 
     class Meta:
         model = Post
@@ -20,11 +27,4 @@ class PaymentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Payment
-        fields = '_all_'
-
-class subPostSerializer(serializers.ModelSerializer):
-    author = serializers.StringRelatedField(many=False)
-
-    class Meta:
-        model = subPost
         fields = '_all_'

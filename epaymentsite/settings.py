@@ -25,7 +25,7 @@ SECRET_KEY = '1zz9w12-ft(q((f6jl3jh4@g$5xhr)47a8xv@prs2u*hz+g*a#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','epaymentbema.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost','epaymentbema.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
