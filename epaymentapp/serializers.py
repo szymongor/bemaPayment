@@ -7,7 +7,7 @@ class subPostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = subPost
-        fields = '_all_'
+        fields = '__all__'
 
 class PostSerializer(serializers.ModelSerializer):
     author = serializers.StringRelatedField(many=False)
