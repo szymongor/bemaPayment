@@ -21,7 +21,7 @@ class BillSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Bill
-        fields = ('title', 'type', 'creator', 'founder','obligors','payments','status')
+        fields = ('title', 'type', 'founder','obligors','payments','status')
 
 class PaymentSerializer(serializers.ModelSerializer):
 
