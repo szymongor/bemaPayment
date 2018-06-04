@@ -18,7 +18,8 @@ class PostSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class PaymentSerializer(serializers.ModelSerializer):
-
+    founder = serializers.StringRelatedField(many=False)
+    
     class Meta:
         model = Payment
         fields = '__all__'
