@@ -21,9 +21,9 @@ from rest_framework_jwt.views import verify_jwt_token
 from epaymentapp import views
 
 urlpatterns = [
-    path('api-token-auth/', obtain_jwt_token),
-    path('api-token-verify/', verify_jwt_token),
+    path('api/api-token-auth/', obtain_jwt_token),
+    path('api/api-token-verify/', verify_jwt_token),
     path('admin/', admin.site.urls),
-    path('posts/', views.PostsList.as_view()),
-    path('bills/', views.BillView.as_view()),
+    path('api/posts/', views.PostsList.as_view()),
+    path('api/bills/', views.BillView.as_view()),
 ]

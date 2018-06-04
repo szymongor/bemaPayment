@@ -17,14 +17,16 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = '__all__'
 
-class BillSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Bill
-        fields = ('title', 'type', 'founder','obligors','payments','status')
-
 class PaymentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Payment
-        fields = '_all_'
+        fields = '__all__'
+
+class BillSerializer(serializers.ModelSerializer):
+    founder = serializers.StringRelatedField(many=False)
+    obligors = serializers.StringRelatedField(many=True)
+    payments = PaymentSerializer(many=True)
+    class Meta:
+        model = Bill
+        fields = ('title', 'type', 'founder','obligors','payments','status')

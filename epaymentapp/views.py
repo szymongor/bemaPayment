@@ -37,12 +37,12 @@ class BillView(APIView):
         request_post = request.data['post']
         site_user = SiteUser.objects.get(user= request.user)
         new_bill = Bill.objects.create(
-        title = request_post['title'],
-	    type = request_post['type'],
-	    amount = request_post['amount'],
-	    founder = site_user,
-        obligors = site_user,
-        status = request_post['status']
+            title = request_post['title'],
+    	    type = request_post['type'],
+    	    amount = request_post['amount'],
+    	    founder = site_user,
+            obligors = site_user,
+            status = request_post['status']
         )
         new_bill.save();
         Bills = Bill.objects.all()
