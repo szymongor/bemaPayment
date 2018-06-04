@@ -26,4 +26,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/posts/', views.PostsList.as_view()),
     path('api/bills/', views.BillView.as_view()),
+    path('api/payment/', views.PaymentView.as_view()),
 ]

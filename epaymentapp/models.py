@@ -51,7 +51,6 @@ class Bill(models.Model):
     obligors = models.ManyToManyField('SiteUser', related_name='bills_to_pay')
     status = models.CharField (max_length=20, choices=status_choices)
 
-
     def __str__(self):
         return self.title
 

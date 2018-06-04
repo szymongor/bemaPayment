@@ -29,4 +29,4 @@ class BillSerializer(serializers.ModelSerializer):
     payments = PaymentSerializer(many=True)
     class Meta:
         model = Bill
-        fields = ('title', 'type', 'founder','obligors','payments','status')
+        fields = '__all__'
